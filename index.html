@@ -51,7 +51,8 @@
 		  pair = pair.split('=');
 		  return obj[pair[0]] = pair[1], obj;
 		}, {});
-		document.getElementById('ipvisitor').innerHTML = data;
+		ipjson = jQuery.parseJSON(JSON.stringify(data, null, 4));
+        document.getElementById('ipvisitor').innerHTML = ipjson.ip;
 	  });
 	</script>
 </h1><p>
