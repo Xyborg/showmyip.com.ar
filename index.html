@@ -43,7 +43,7 @@
 </header>
 <section id="content">
 <div class="inner">
-<h1>Your IP Address is: 
+<h1>Your IP Address is: <span id="ipvisitor"></span>
 	<script>$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
 		// Convert key-value pairs to JSON
 		// https://stackoverflow.com/a/39284735/452587
@@ -51,7 +51,7 @@
 		  pair = pair.split('=');
 		  return obj[pair[0]] = pair[1], obj;
 		}, {});
-		document.write(data);
+		document.getElementById('ipvisitor').innerHTML = data;
 	  });
 	</script>
 </h1><p>
